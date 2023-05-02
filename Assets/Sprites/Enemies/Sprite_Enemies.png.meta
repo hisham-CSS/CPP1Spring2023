@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1944,15 +1944,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_87
+      name: PlayerProjectile
       rect:
         serializedVersion: 2
         x: 79
         y: 557
         width: 8
         height: 8
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2406,15 +2406,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_109
+      name: EnemyProjectile
       rect:
         serializedVersion: 2
         x: 383
         y: 534
         width: 8
         height: 8
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -14554,6 +14554,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      EnemyProjectile: -1978258610
+      PlayerProjectile: -811216024
       Sprite_Enemies_0: -1525288328
       Sprite_Enemies_1: 1613880221
       Sprite_Enemies_10: 1284065517
@@ -14566,7 +14568,6 @@ TextureImporter:
       Sprite_Enemies_106: -941711175
       Sprite_Enemies_107: 1569958587
       Sprite_Enemies_108: -1684095125
-      Sprite_Enemies_109: -1978258610
       Sprite_Enemies_11: 1583896443
       Sprite_Enemies_110: -1580627183
       Sprite_Enemies_111: 988601048
@@ -15227,7 +15228,6 @@ TextureImporter:
       Sprite_Enemies_84: 1311753967
       Sprite_Enemies_85: 977990975
       Sprite_Enemies_86: 1177429043
-      Sprite_Enemies_87: -811216024
       Sprite_Enemies_88: 1528360440
       Sprite_Enemies_89: -1651826488
       Sprite_Enemies_9: 636395053
