@@ -159,15 +159,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_1
+      name: Life
       rect:
         serializedVersion: 2
-        x: 242
-        y: 83
+        x: 241
+        y: 84
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,15 +180,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_2
+      name: Score
       rect:
         serializedVersion: 2
         x: 64
-        y: 140
+        y: 139
         width: 8
-        height: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,9 +212,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       BigCoin: -2035530269
-      DonutPlains1_DONE_1: -764982177
-      DonutPlains1_DONE_2: -1663740872
       Level: -2056933411
+      Life: -764982177
+      Score: -1663740872
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

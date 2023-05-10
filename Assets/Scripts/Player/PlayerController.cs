@@ -20,6 +20,38 @@ public class PlayerController : MonoBehaviour
     public LayerMask isGroundLayer;
     public float groundCheckRadius = 0.02f;
 
+    Coroutine jumpForceChange = null;
+
+    public int lives
+    {
+        get => _lives;
+        set
+        {
+            //if (_lives < value) //gained a life
+            //if (_lives > value) //lost a life
+
+            _lives = value;
+
+            Debug.Log("Lives value has changed to " + _lives.ToString());
+            //if (_lives <= 0) //gameover
+        }
+    }
+    private int _lives = 3;
+
+
+    public int score
+    {
+        get => _score;
+        set
+        {
+            _score = value;
+
+            Debug.Log("Score value has changed to " + _score.ToString());
+        }
+    }
+    private int _score = 0;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +116,32 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 10;
     }
 
+    public void StartJumpForceChange()
+    {
+        Debug.Log("Powerup Picked up!");
+
+        if (jumpForceChange == null)
+        {
+            jumpForceChange = StartCoroutine(JumpForceChange());
+            return;
+        }
+
+        StopCoroutine(jumpForceChange);
+        jumpForceChange = null;
+        jumpForce /= 2;
+        StartJumpForceChange();
+    }
+
+    IEnumerator JumpForceChange()
+    {
+        jumpForce *= 2;
+
+        yield return new WaitForSeconds(5.0f);
+
+        jumpForce /= 2;
+        jumpForceChange = null;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerController pc = collision.gameObject.GetComponent<PlayerController>();
@@ -97,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        
     }
 
 
