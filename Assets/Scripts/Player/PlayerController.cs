@@ -161,7 +161,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.CompareTag("Squish"))
+        {
+            EnemyWalker enemy = collision.gameObject.transform.parent.GetComponent<EnemyWalker>();
+            enemy.Squish();
+            rb.AddForce(Vector2.up * 500);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -7131,7 +7131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_334
+      name: TEnemy1
       rect:
         serializedVersion: 2
         x: 800
@@ -7152,7 +7152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_335
+      name: TEnemy2
       rect:
         serializedVersion: 2
         x: 823
@@ -7173,7 +7173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_336
+      name: TEnemy3
       rect:
         serializedVersion: 2
         x: 852
@@ -7194,7 +7194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_337
+      name: TEnemy4
       rect:
         serializedVersion: 2
         x: 881
@@ -9693,7 +9693,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_456
+      name: EWalk1
       rect:
         serializedVersion: 2
         x: 27
@@ -9714,7 +9714,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_457
+      name: EWalk2
       rect:
         serializedVersion: 2
         x: 46
@@ -9924,7 +9924,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_467
+      name: EDeath
       rect:
         serializedVersion: 2
         x: 250
@@ -10596,7 +10596,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_499
+      name: ESquish
       rect:
         serializedVersion: 2
         x: 250
@@ -14554,6 +14554,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      EDeath: -2005853628
+      ESquish: -558631672
+      EWalk1: 1234636344
+      EWalk2: -79094336
       EnemyProjectile: -1978258610
       PlayerProjectile: -811216024
       Sprite_Enemies_0: -1525288328
@@ -14817,10 +14821,6 @@ TextureImporter:
       Sprite_Enemies_331: 557877198
       Sprite_Enemies_332: 1261774673
       Sprite_Enemies_333: 731281856
-      Sprite_Enemies_334: 284833604
-      Sprite_Enemies_335: -849911507
-      Sprite_Enemies_336: -721796279
-      Sprite_Enemies_337: -1580897908
       Sprite_Enemies_338: 1785139952
       Sprite_Enemies_339: 566627705
       Sprite_Enemies_34: -1571145355
@@ -14952,8 +14952,6 @@ TextureImporter:
       Sprite_Enemies_453: -2104384628
       Sprite_Enemies_454: 1608163331
       Sprite_Enemies_455: -1288351498
-      Sprite_Enemies_456: 1234636344
-      Sprite_Enemies_457: -79094336
       Sprite_Enemies_458: -751135210
       Sprite_Enemies_459: 290576307
       Sprite_Enemies_46: -1434135808
@@ -14964,7 +14962,6 @@ TextureImporter:
       Sprite_Enemies_464: 502883387
       Sprite_Enemies_465: 1749160137
       Sprite_Enemies_466: -647633286
-      Sprite_Enemies_467: -2005853628
       Sprite_Enemies_468: -2099847934
       Sprite_Enemies_469: 73785574
       Sprite_Enemies_47: 69073219
@@ -14999,7 +14996,6 @@ TextureImporter:
       Sprite_Enemies_496: 589042752
       Sprite_Enemies_497: 699409716
       Sprite_Enemies_498: -76077993
-      Sprite_Enemies_499: -558631672
       Sprite_Enemies_5: 71386442
       Sprite_Enemies_50: 1359733746
       Sprite_Enemies_500: 293606144
@@ -15241,6 +15237,10 @@ TextureImporter:
       Sprite_Enemies_97: 697392649
       Sprite_Enemies_98: 508364208
       Sprite_Enemies_99: 2068381703
+      TEnemy1: 284833604
+      TEnemy2: -849911507
+      TEnemy3: -721796279
+      TEnemy4: -1580897908
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
