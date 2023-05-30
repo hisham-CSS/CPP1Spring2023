@@ -5,10 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Shoot))]
 public class EnemyTurret : Enemy
 {
+    public float turretFireDistance;
     public float projectileFireRate;
 
     Shoot shootScript;
     float timeSinceLastFire = 0.0f;
+   
 
     // Start is called before the first frame update
     public override void Start()
@@ -20,6 +22,9 @@ public class EnemyTurret : Enemy
 
         if (projectileFireRate <= 0.0f)
             projectileFireRate = 2.0f;
+
+        if (turretFireDistance <= 0.0f)
+            turretFireDistance = 3.0f;
     }
 
     private void Update()
@@ -28,9 +33,27 @@ public class EnemyTurret : Enemy
 
         if (curClips[0].clip.name != "Shoot")
         {
-            if (Time.time >= timeSinceLastFire + projectileFireRate)
+            if (GameManager.Instance.playerInstance)
             {
-                anim.SetTrigger("Shoot");
+                if (GameManager.Instance.playerInstance.transform.position.x < transform.position.x)
+                    sr.flipX = true;
+                else
+                    sr.flipX = false;
+            }
+
+            float distance = Vector2.Distance(GameManager.Instance.playerInstance.transform.position, transform.position);
+
+            if (distance <= turretFireDistance)
+            {
+                sr.color = Color.red;
+                if (Time.time >= timeSinceLastFire + projectileFireRate)
+                {
+                    anim.SetTrigger("Shoot");
+                }
+            }
+            else
+            {
+                sr.color = Color.white;
             }
         }
     }

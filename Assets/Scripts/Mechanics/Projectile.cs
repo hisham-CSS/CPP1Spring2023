@@ -25,9 +25,14 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wall")) Destroy(gameObject);
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && CompareTag("PlayerProjectile"))
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Player") && CompareTag("EnemyProjectile"))
+        {
+            GameManager.Instance.Lives--;
             Destroy(gameObject);
         }
     }

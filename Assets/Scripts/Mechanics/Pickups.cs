@@ -17,11 +17,12 @@ public class Pickups : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController myController = collision.gameObject.GetComponent<PlayerController>();
+            
 
             if (currentPickup == PickupType.Powerup)
             {
                 //do something;
+                PlayerController myController = collision.gameObject.GetComponent<PlayerController>();
                 myController.StartJumpForceChange();
                 Destroy(gameObject);
                 return;
@@ -30,13 +31,13 @@ public class Pickups : MonoBehaviour
             if (currentPickup == PickupType.Life)
             {
                 //do something;
-                myController.lives++;
+                GameManager.Instance.Lives++;
                 Destroy(gameObject);
                 return;
             }
 
             //do something in regards to score
-            myController.score++;
+            GameManager.Instance.Score++;
             Destroy(gameObject);
         }
     }

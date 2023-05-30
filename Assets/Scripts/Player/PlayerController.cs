@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
+    public static Transform playerTransform;
+
     //Component references
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -22,40 +24,14 @@ public class PlayerController : MonoBehaviour
 
     Coroutine jumpForceChange = null;
 
-    public int lives
-    {
-        get => _lives;
-        set
-        {
-            //if (_lives < value) //gained a life
-            //if (_lives > value) //lost a life
 
-            _lives = value;
-
-            Debug.Log("Lives value has changed to " + _lives.ToString());
-            //if (_lives <= 0) //gameover
-        }
-    }
-    private int _lives = 3;
-
-
-    public int score
-    {
-        get => _score;
-        set
-        {
-            _score = value;
-
-            Debug.Log("Score value has changed to " + _score.ToString());
-        }
-    }
-    private int _score = 0;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerTransform = transform;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -77,7 +53,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
         if (isGrounded) rb.gravityScale = 1;
 
-
+        
 
         if (curPlayingClips.Length > 0)
         {
