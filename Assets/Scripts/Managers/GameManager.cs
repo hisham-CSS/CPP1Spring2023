@@ -47,7 +47,13 @@ public class GameManager : MonoBehaviour
     private int _score = 0;
 
     public PlayerController playerPrefab;
-    [HideInInspector] public PlayerController playerInstance;
+    
+    public PlayerController PlayerInstance
+    {
+        get => playerInstance;
+    }
+    private PlayerController playerInstance;
+
     [HideInInspector] public Transform spawnPoint;
 
     // Start is called before the first frame update

@@ -33,15 +33,15 @@ public class EnemyTurret : Enemy
 
         if (curClips[0].clip.name != "Shoot")
         {
-            if (GameManager.Instance.playerInstance)
+            if (GameManager.Instance.PlayerInstance)
             {
-                if (GameManager.Instance.playerInstance.transform.position.x < transform.position.x)
+                if (GameManager.Instance.PlayerInstance.transform.position.x < transform.position.x)
                     sr.flipX = true;
                 else
                     sr.flipX = false;
             }
 
-            float distance = Vector2.Distance(GameManager.Instance.playerInstance.transform.position, transform.position);
+            float distance = Vector2.Distance(GameManager.Instance.PlayerInstance.transform.position, transform.position);
 
             if (distance <= turretFireDistance)
             {
