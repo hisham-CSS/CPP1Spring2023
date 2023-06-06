@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("Lives value has changed to " + _lives.ToString());
             if (_lives <= 0) GameOver();
+
+             OnLifeValueChanged?.Invoke(_lives);
         }
     }
     private int _lives = 3;
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
     private PlayerController playerInstance;
 
     [HideInInspector] public Transform spawnPoint;
+    public UnityEvent<int> OnLifeValueChanged;
 
     // Start is called before the first frame update
     void Start()
@@ -72,13 +76,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (SceneManager.GetActiveScene().name == "Level")
-                SceneManager.LoadScene("Title");
-            else
-                SceneManager.LoadScene("Level");
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    if (SceneManager.GetActiveScene().name == "Level")
+        //        SceneManager.LoadScene("Title");
+        //    else
+        //        SceneManager.LoadScene("Level");
+        //}
     }
 
     public void SpawnPlayer(Transform spawnLocation)
@@ -95,6 +99,7 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         //go to game over scene
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     void Respawn()
