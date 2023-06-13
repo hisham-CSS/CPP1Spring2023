@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class CanvasManager : MonoBehaviour
 {
+    public AudioMixer audioMixer;
+
     [Header("Buttons")]
     public Button startButton;
     public Button settingsButton;
@@ -77,6 +80,14 @@ public class CanvasManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
+
+        if (volSlider && volSliderText)
+        {
+            float value;
+            audioMixer.GetFloat("MasterVol", out value);
+            volSlider.value = value + 80;
+            volSliderText.text = (Mathf.Ceil(value + 80)).ToString();
+        }
     }
     void ShowMainMenu()
     {
@@ -99,6 +110,7 @@ public class CanvasManager : MonoBehaviour
     void OnSliderValueChanged(float value)
     {
         volSliderText.text = value.ToString();
+        audioMixer.SetFloat("MasterVol", value - 80);
     }
     
     void Update()

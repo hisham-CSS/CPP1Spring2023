@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator anim;
+    AudioSourceManager asm;
 
     //movement var
     public float speed = 5.0f;
@@ -22,10 +23,11 @@ public class PlayerController : MonoBehaviour
     public LayerMask isGroundLayer;
     public float groundCheckRadius = 0.02f;
 
+
+    //audio clips
+    public AudioClip jumpSound;
+
     Coroutine jumpForceChange = null;
-
-
-
 
 
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        asm = GetComponent<AudioSourceManager>();
 
         if (speed <= 0) speed = 5.0f;
         if (jumpForce <= 0) jumpForce = 300.0f;
@@ -73,6 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
+            asm.PlayOneShot(jumpSound, false);
         }
 
         if (!isGrounded && Input.GetButtonDown("Jump"))
